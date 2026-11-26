@@ -1,0 +1,104 @@
+/* Ken Medical Center - style.css */
+:root {
+  --green-bg: #5c8d70;
+  --green-dark: #1b5e3a;
+  --green-light: #e6f4ea;
+  --white: #ffffff;
+  --ink: #12301f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background: var(--green-bg);          /* green page background */
+  color: var(--white);
+  line-height: 1.65;
+}
+header {
+  background: var(--green-dark);
+  padding: 1rem 1.5rem;
+  border-bottom: 4px solid #8fd19e;
+}
+header h1 { margin: 0; font-size: 1.9rem; letter-spacing: .5px; }
+header p { margin: .2rem 0 0; color: #cfeedd; font-style: italic; }
+nav { margin-top: .8rem; display: flex; flex-wrap: wrap; gap: .5rem; }
+nav a {
+  color: var(--white); text-decoration: none; padding: .4rem .9rem;
+  border: 1px solid #8fd19e; border-radius: 4px;
+}
+nav a:hover, nav a.active { background: #8fd19e; color: var(--ink); }
+nav a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid #fff3a0; outline-offset: 2px;
+}
+main { max-width: 980px; margin: 0 auto; padding: 1.5rem; }
+section {
+  background: var(--green-light); color: var(--ink);
+  padding: 1.3rem 1.6rem; margin-bottom: 1.5rem; border-radius: 8px;
+}
+h2 { margin-top: 0; color: var(--green-dark); }
+.site-logo {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  object-fit: contain;
+  margin: 0 auto 1rem;
+}
+.hero-section {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+.hero-copy { min-width: 0; }
+.hero-section .hero-photo {
+  width: 65%;
+  max-width: 220px;
+  justify-self: center;
+}
+.hero-photo {
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgba(18, 48, 31, 0.12);
+}
+.team-banner, .about-photos img, .contact-visual img, .image-gallery img {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgba(18, 48, 31, 0.12);
+}
+.about-photos img[src="Images/Doctor.jpg"] { aspect-ratio: auto; }
+.contact-visual img { max-width: 1920px; aspect-ratio: 12 / 5; }
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.about-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.media video, .media audio, iframe { width: 100%; border: 0; border-radius: 6px; }
+.media video { max-width: 1920px; aspect-ratio: 16 / 9; height: auto; max-height: none; background: #000; }
+iframe.frame { height: 320px; border: 2px solid var(--green-dark); }
+iframe.map { height: 380px; }
+form label { display: block; margin: .8rem 0 .2rem; font-weight: bold; }
+form input, form textarea {
+  width: 100%; padding: .6rem; border: 1px solid var(--green-dark);
+  border-radius: 4px; font: inherit;
+}
+button {
+  margin-top: 1rem; padding: .7rem 1.6rem; background: var(--green-dark);
+  color: var(--white); border: 0; border-radius: 4px; font: inherit; cursor: pointer;
+}
+button:hover { background: #14472b; }
+footer { background: var(--green-dark); text-align: center; padding: 1rem; margin-top: 2rem; }
+@media (max-width: 600px) {
+  header h1 { font-size: 1.5rem; }
+  .hero-section { grid-template-columns: 1fr; }
+}
